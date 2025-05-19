@@ -27,8 +27,10 @@ flex-direction: column;
     gap: 1.5vmin;
 
 }
-#rest-btn{
+#reset-btn{
     width: 200px;
+    height: 50px;
+    border-radius: 10px;
     font-size: 1rem;
     padding: 1rem;
 }
@@ -41,7 +43,26 @@ flex-direction: column;
     background-color: white;
     color:black;
 }
-#winner{
+#win-box{
+
+    font-size: 50px;
+    text-align: center;
+
+}
+#new-game-btn{
+  width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 1rem;
+    padding: 1rem;
+}
+.winner{
+    height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+}
+.hide{
+    display: none;
 }

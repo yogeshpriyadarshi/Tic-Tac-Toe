@@ -19,6 +19,7 @@ mode.addEventListener("click", () => {
 
 const gamebtns = document.querySelectorAll(".game-btn");
 const winbox = document.querySelector("#win-box");
+const winner = document.querySelector('.winner')
 const reset = document.querySelector('#reset-btn');
 const newgame = document.querySelector('#new-game-btn');
 
@@ -57,16 +58,22 @@ function disableAll(){
 }
 function enableAll(){
   gamebtns.forEach((bt)=> {bt.disabled=false;  bt.innerText=""; 
-    winbox.innerText=''; count=0;   } );
+    winbox.innerText=''; count=0; 
+    winner.classList.add("hide");
+    } );
 }
  
 reset.addEventListener("click",()=>{ enableAll()});
 newgame.addEventListener("click",()=>{ enableAll()});
 
+function showWinner(va1){
+console.log("winner",va1);
+        winbox.innerText=`Congratulation! winner is ${va1}`;
+        winner.classList.remove("hide") ;
+}
 
 
 function checkWinning() {
-
 
   winningPattern.forEach((win) => {
     let va1 = gamebtns[win[0]].innerText;
@@ -75,14 +82,14 @@ function checkWinning() {
 
     if (va1 != "" || va2 != "" || va3 != "") {
       if (va1 === va2 && va2 === va3) {
-        console.log("winner",va1);
-        winbox.innerText=`Congratulation! winner is ${va1}`;
+        showWinner(va1);
         disableAll();
       }
     }
 
     if(count===9){
       winbox.innerText="Game is drawn."
+      winner.classList.remove("hide");
     }
   });
 }
