@@ -1,0 +1,47 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.game-btn{
+    background-color: aqua;
+    color:red;
+    height: 100px;
+    width: 100px;
+    border-radius: 10px;
+    font-size: 50px;
+}
+#box{
+    height: 75vh;
+            /* background-color: rgb(58, 89, 209); */
+flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#game-container{
+    /* background-color: red; */
+    height: 55vmin;
+    width: 320px;
+    flex-wrap: wrap;
+    display: flex;
+    gap: 1.5vmin;
+
+}
+#rest-btn{
+    width: 200px;
+    font-size: 1rem;
+    padding: 1rem;
+}
+
+.dark{
+    background-color: black;
+    color: white;
+}
+.light{
+    background-color: white;
+    color:black;
+}
+#winner{
+    display: flex;
+    justify-content: center;
+}
