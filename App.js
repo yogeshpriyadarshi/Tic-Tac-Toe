@@ -18,7 +18,11 @@ mode.addEventListener("click", () => {
 // Game Logic
 
 const gamebtns = document.querySelectorAll(".game-btn");
-const winbox = document.querySelector("#win-box")
+const winbox = document.querySelector("#win-box");
+const reset = document.querySelector('#reset-btn');
+const newgame = document.querySelector('#new-game-btn');
+
+let count =0;
 let turnO = true;
 let winningPattern = [
   [0, 1, 2],
@@ -36,18 +40,34 @@ gamebtns.forEach((bt) => {
     if (turnO) {
       bt.innerText = "O";
       turnO = false;
+      count++;
     } else {
       bt.innerText = "X";
       turnO = true;
+      count++
     }
     bt.disabled = true;
     checkWinning();
   });
-
-  //  function for checking winning.
 });
 
+function disableAll(){
+  gamebtns.forEach((bt)=> {bt.disabled=true})
+
+}
+function enableAll(){
+  gamebtns.forEach((bt)=> {bt.disabled=false;  bt.innerText=""; 
+    winbox.innerText=''; count=0;   } );
+}
+ 
+reset.addEventListener("click",()=>{ enableAll()});
+newgame.addEventListener("click",()=>{ enableAll()});
+
+
+
 function checkWinning() {
+
+
   winningPattern.forEach((win) => {
     let va1 = gamebtns[win[0]].innerText;
     let va2 = gamebtns[win[1]].innerText;
@@ -57,8 +77,12 @@ function checkWinning() {
       if (va1 === va2 && va2 === va3) {
         console.log("winner",va1);
         winbox.innerText=`Congratulation! winner is ${va1}`;
-        
+        disableAll();
       }
+    }
+
+    if(count===9){
+      winbox.innerText="Game is drawn."
     }
   });
 }
