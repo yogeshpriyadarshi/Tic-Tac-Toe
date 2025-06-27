@@ -1,44 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./index.css" />
-    <title> Testing... </title>
-</head>
-<body>
+    <title>Testing...</title>
+  </head>
+  <body>
+    <div>
+      <button id="mode">Chnage Mode</button>
+    </div>
 
-    <div>  
-<button id="mode" > Chnage Mode </button>
- </div>
+    <div class="winner hide">
+      <div id="win-box"></div>
+      <button id="new-game-btn">New Game</button>
+    </div>
 
- <div class="winner hide">
-    <div id="win-box" >  </div>  
-<button id="new-game-btn"> New Game</button>
-</div>
+    <div id="box" >
+      <h1>TIC-TAC-TOE</h1>
 
-<div id="box">  
-    <h1> TIC-TAC-TOE</h1>
+      <div id="game-container">
+        <button class="game-btn"></button>
+        <button class="game-btn"></button>
+        <button class="game-btn"></button>
 
-<div id="game-container">
+        <button class="game-btn"></button>
+        <button class="game-btn"></button>
+        <button class="game-btn"></button>
 
-<button class="game-btn">  </button>
-<button class="game-btn" >   </button>
-<button class="game-btn" > </button>
+        <button class="game-btn"></button>
+        <button class="game-btn"></button>
+        <button class="game-btn"></button>
+      </div>
+      <button id="reset-btn">Rest Game</button>
+    </div>
 
-<button class="game-btn" >   </button>
-<button class="game-btn" >   </button>
-<button class="game-btn" >   </button>
-
-<button class="game-btn" >  </button>
-<button class="game-btn">  </button>
-<button class="game-btn">  </button>
-</div>
-<button id="reset-btn"> Rest Game</button>
-
-</div>
-
-
-    <script src="./App.js" > </script>
-</body>
+    <script src="./App.js"></script>
+  </body>
 </html>
